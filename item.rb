@@ -1,5 +1,5 @@
 class Item
-    attr_writter :text, :checked
+    attr_writer :text, :checked
 
     def initialize(text="")
         @text = text
@@ -8,9 +8,9 @@ class Item
 
     def to_s
         if @checked
-            "[x]" + @text
+            "[x] " + @text
         else
-            "[ ]" + @text
+            "[ ] " + @text
         end
     end
     
