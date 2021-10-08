@@ -16,7 +16,8 @@ class ListApp
     end
 
     def run
-        puts "Welcome to our shopping list"
+
+        puts "\nWelcome to our shopping list"
         loop do
             puts
             puts "A - Add an item"
@@ -33,48 +34,60 @@ class ListApp
                 puts "what would you like to add?"
                 item = gets.chomp
                 @list.add_item(item)
-                30.times { print "*" }
+                30.times { print "-" }
                 puts "\n#{item} has been added to your list"
-                30.times { print "*" }
+                30.times { print "-" }
 
             when 'R'
                 puts
                 puts "which item you want to remove?"
                 index = gets.chomp
-                @list.remove_item(index.to_i)
-                30.times { print "*" }
-                puts "\n#{index} has been removed from your list"
-                30.times { print "*" }
-            
+                item = @list.remove_item(index.to_i)
+                30.times { print "-" }
+                puts "\n#{item} has been removed from your list"
+                30.times { print "-" }
+        
             when 'S'
                 puts
                 @list.show_all
-                30.times { print "*" }
+                30.times { print "-" }
                 puts "\nthese are all the items on your list"
-                30.times { print "*" }
+                30.times { print "-" }
             when 'C'
                 puts
                 puts "which item you want to mark "
                 index = gets.chomp
-                @list.check_item(index.to_i) 
-                30.times { print "*" }
-                puts "\n#{index} has been marked"
-                30.times { print "*" }
+                item = @list.check_item(index.to_i) 
+                30.times { print "-" }
+                puts "\n#{item.text} has been marked"
+                30.times { print "-" }
+
             when 'D'
                 puts
                 puts "do you want to remove all items? y/n"
                 input = gets.chomp
                 if input.upcase == 'Y'
                     @list.remove_all
+                    30.times { print "-" }
+                    puts "\nall items have been successfully deleted"
+                    30.times { print "-" }
                 else
-                    puts "cancelled operation"
+                    30.times { print "-" }
+                    puts "\ncancelled operation"
+                    30.times { print "-" }
                 end
             
             when 'E'
                 break
+                else
+                    30.times { print "-" }
+                    puts "\nunrecognized transaction"
+                    30.times { print "-" }
             end
         end 
+        30.times { print "-" }
         puts "thank you for using our application"
+        30.times { print "-" }
     end
 end
 

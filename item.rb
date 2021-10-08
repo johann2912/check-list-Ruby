@@ -1,5 +1,6 @@
 class Item
-    attr_writer :text, :checked
+    attr_accessor :text
+    attr_writer :checked
 
     def initialize(text="")
         @text = text
